@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PhishGuard | Scam Detection</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+
+        <div class="logo">
+            🛡️ PhishGuard
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#scanner">Scanners</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="badge">
+            🛡️ Your Digital Safety Companion
+        </div>
+
+        <h1>
+            Stop. Check.
+            <span>Stay Safe.</span>
+        </h1>
+
+        <p>
+            Detect suspicious links, scam messages, fake payment requests
+            and digital arrest threats with PhishGuard.
+        </p>
+
+        <a href="#scanner" class="main-button">
+            Start Scanning →
+        </a>
+        <!-- 3D Cyber Shield -->
+
+<!-- 3D Cyber Shield Scene -->
+
+<div class="cyber-visual">
+
+
+<div class="cyber-orbit"></div>
+<div class="cyber-orbit orbit-two"></div>
+
+<!-- Floating 3D Objects -->
+<div class="floating-model model-lock">🔒</div>
+<div class="floating-model model-laptop">💻</div>
+<div class="floating-model model-globe">🌐</div>
+<div class="floating-model model-bug">🦠</div>
+
+<!-- Main Shield -->
+<div class="cyber-shield">🛡️</div>
+
+<span class="cyber-particle p1"></span>
+<span class="cyber-particle p2"></span>
+
+
+</div>
+<div class="cyber-particles" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+
+
+    </section>
+
+
+    <!-- Scanner Section -->
+     <!-- Interactive Demo Mode -->
+
+<section class="demo-section" id="demo-mode">
+
+
+<div class="demo-heading">
+    <span class="demo-badge">INTERACTIVE DEMO</span>
+    <h2>🛡️ Test PhishGuard</h2>
+    <p>Select a sample message and test our scam detection system.</p>
+</div>
+
+<div class="demo-grid">
+
+    <div class="demo-card">
+        <span class="demo-icon">💬</span>
+        <h3>Normal Message</h3>
+        <p>Test a normal everyday conversation.</p>
+        <button type="button" onclick="testDemo(0)">
+            Test This Message
+        </button>
+    </div>
+
+    <div class="demo-card">
+        <span class="demo-icon">🏦</span>
+        <h3>KYC Scam</h3>
+        <p>Check a suspicious banking message.</p>
+        <button type="button" onclick="testDemo(1)">
+            Test This Message
+        </button>
+    </div>
+
+    <div class="demo-card">
+        <span class="demo-icon">🔐</span>
+        <h3>OTP Scam</h3>
+        <p>Check a message asking for an OTP.</p>
+        <button type="button" onclick="testDemo(2)">
+            Test This Message
+        </button>
+    </div>
+
+    <div class="demo-card">
+        <span class="demo-icon">🚨</span>
+        <h3>Digital Arrest</h3>
+        <p>Check a threatening message.</p>
+        <button type="button" onclick="testDemo(3)">
+            Test This Message
+        </button>
+    </div>
+
+    <div class="demo-card">
+        <span class="demo-icon">🎁</span>
+        <h3>Lottery Scam</h3>
+        <p>Check a suspicious prize claim.</p>
+        <button type="button" onclick="testDemo(4)">
+            Test This Message
+        </button>
+    </div>
+
+</div>
+
+
+</section>
+
+    <section class="section" id="scanner">
+
+        <div class="section-heading">
+            <h2>🔍 Security Scanner</h2>
+
+            <p>
+                Choose a scanner and check suspicious content.
+            </p>
+        </div>
+
+
+        <div class="scanner-container">
+
+            <!-- Scanner Tabs -->
+            <div class="tabs">
+
+                <button class="tab active"
+                        onclick="showScanner('message', this)">
+                    💬 Message
+                </button>
+
+                <button class="tab"
+                        onclick="showScanner('url', this)">
+                    🔗 URL
+                </button>
+
+                <button class="tab"
+                        onclick="showScanner('screenshot', this)">
+                    📸 Screenshot
+                </button>
+
+                <button class="tab"
+                        onclick="showScanner('qr', this)">
+                    📱 QR / UPI
+                </button>
+
+                <button class="tab"
+                        onclick="showScanner('arrest', this)">
+                    🚨 Digital Arrest
+                </button>
+
+            </div>
+
+
+            <!-- Message Scanner -->
+            <div class="scanner-panel active" id="message">
+
+                <h3>Message Scam Detector</h3>
+
+                <p>
+                    Check suspicious messages in English or Hinglish.
+                </p>
+
+                <form action="#" onsubmit="demoScan(event, 'messageResult')">
+
+                    <textarea
+                        id="messageInput"
+                        placeholder="Example: Aapka KYC expire ho gaya hai. Click this link..."
+                        required></textarea>
+
+                    <button class="scan-button" type="submit">
+                        Analyze Message →
+                    </button>
+
+                </form>
+
+                <div class="result" id="messageResult"></div>
+
+            </div>
+
+
+            <!-- URL Scanner -->
+            <div class="scanner-panel" id="url">
+
+                <h3>Suspicious URL Scanner</h3>
+
+                <p>
+                    Enter a website link to inspect suspicious URL patterns.
+                </p>
+
+                <form action="#" onsubmit="demoScan(event, 'urlResult')">
+
+                    <input
+                        type="text"
+                        id="urlInput"
+                        placeholder="Paste suspicious URL here..."
+                        required>
+
+                    <button class="scan-button" type="submit">
+                        Check URL →
+                    </button>
+
+                </form>
+
+                <div class="result" id="urlResult"></div>
+
+            </div>
+
+
+            <!-- Screenshot Scanner -->
+            <div class="scanner-panel" id="screenshot">
+  <h3>Screenshot Scanner</h3>
+  <p>Select a WhatsApp or SMS screenshot for scam analysis.</p>
+
+  <form onsubmit="scanScreenshot(event)">
+    <input type="file" id="imageInput" accept="image/*" required>
+    <button class="scan-button" type="submit">Scan Screenshot →</button>
+  </form>
+
+  <div class="result" id="imageResult"></div>
+</div>
+
+
+
+            <!-- QR and UPI Scanner -->
+             <!-- QR and UPI Scanner -->
+
+<div class="scanner-panel" id="qr">
+
+
+<h3>QR & UPI Safety Checker</h3>
+
+<p>
+    Upload a QR code image to check its contents for warning signs.
+</p>
+
+<form onsubmit="scanQR(event)">
+
+    <input
+        type="file"
+        id="qrInput"
+        accept="image/png,image/jpeg,image/webp"
+        required
+    >
+
+    <button class="scan-button" type="submit">
+        Scan QR Code →
+    </button>
+
+</form>
+
+<div class="result" id="qrResult"></div>
+
+<p class="small-note">
+    Never approve an unexpected payment request.
+    Always verify the receiver and amount before making a payment.
+    No scanner can guarantee that a QR code is safe.
+</p>
+
+</div>
+
+
+
+            <!-- Digital Arrest Detector -->
+            <div class="scanner-panel" id="arrest">
+
+                <h3>Digital Arrest Scam Detector</h3>
+
+                <p>
+                    Inspect messages involving fake police threats,
+                    forced video calls or demands for money.
+                </p>
+
+                <form action="#" onsubmit="demoScan(event, 'arrestResult')">
+
+                    <textarea
+                        id="arrestInput"
+                        placeholder="Paste a suspicious message here..."
+                        required></textarea>
+
+                    <button class="scan-button" type="submit">
+                        Check Warning Signs →
+                    </button>
+
+                </form>
+
+                <div class="result" id="arrestResult"></div>
+
+            </div>
+
+            
+
+        </div>
+
+    </section>
+
+
+    <!-- Features Section -->
+    <section class="section" id="features">
+
+        <div class="section-heading">
+            <h2>Powerful Safety Features</h2>
+
+            <p>
+                Multiple security checks in one place.
+            </p>
+        </div>
+
+
+<div class="feature-grid">
+
+    <div class="feature-card" onclick="openFeatureScanner('url')" role="button" tabindex="0">
+        <div class="feature-icon">🔗</div>
+        <h3>URL Scanner</h3>
+        <p>
+            Inspect suspicious links and identify misleading
+            domains or unusual URL patterns.
+        </p>
+    </div>
+
+    <div class="feature-card" onclick="openFeatureScanner('message')" role="button" tabindex="0">
+        <div class="feature-icon">💬</div>
+        <h3>Hinglish Detection</h3>
+        <p>
+            Identify warning signs in English and Hinglish
+            messages, including fake KYC and refund claims.
+        </p>
+    </div>
+
+    <div class="feature-card" onclick="openFeatureScanner('screenshot')" role="button" tabindex="0">
+        <div class="feature-icon">📸</div>
+        <h3>Screenshot Scanner</h3>
+        <p>
+            Extract text from screenshots using OCR and
+            inspect the extracted message for scam indicators.
+        </p>
+    </div>
+
+    <div class="feature-card" onclick="openFeatureScanner('qr')" role="button" tabindex="0">
+        <div class="feature-icon">📱</div>
+        <h3>QR & UPI Checker</h3>
+        <p>
+            Decode QR content and inspect suspicious links
+            and payment-request warning signs.
+        </p>
+    </div>
+
+    <div class="feature-card" onclick="openFeatureScanner('arrest')" role="button" tabindex="0">
+        <div class="feature-icon">🚨</div>
+        <h3>Digital Arrest Detector</h3>
+        <p>
+            Flag threatening messages involving fake police
+            claims, intimidation or demands for money.
+        </p>
+    </div>
+
+    <div class="feature-card" onclick="openFeatureScanner('url')" role="button" tabindex="0">
+        <div class="feature-icon">📊</div>
+        <h3>Risk Explanation</h3>
+        <p>
+            View the risk score, warning signs and safety advice
+            provided by the scanner.
+        </p>
+    </div>
+
+</div>
+
+    </section>
+
+
+    <!-- How It Works -->
+    <section class="section" id="about">
+
+        <div class="section-heading">
+            <h2>How PhishGuard Works</h2>
+
+            <p>Four simple steps towards better online safety.</p>
+        </div>
+
+
+        <div class="steps-grid">
+
+            <div class="step-card">
+                <span>01</span>
+                <h3>Select</h3>
+                <p>Choose the appropriate scanner.</p>
+            </div>
+
+            <div class="step-card">
+                <span>02</span>
+                <h3>Submit</h3>
+                <p>Provide a suspicious link, message or image.</p>
+            </div>
+
+            <div class="step-card">
+                <span>03</span>
+                <h3>Analyze</h3>
+                <p>The detection engine checks for warning signs.</p>
+            </div>
+
+            <div class="step-card">
+                <span>04</span>
+                <h3>Review</h3>
+                <p>Understand the result before taking action.</p>
+            </div>
+
+        </div>
+
+    </section>
+<!-- Cybersecurity Learning Section -->
+<section id="learn" class="learn-section">
+
+    <div class="section-heading">
+        <h2>Learn to Spot <span>Cyber Scams</span></h2>
+        <p>Understand common online scams and learn how to stay safe.</p>
+    </div>
+
+    <div class="learning-container">
+
+        <div class="learning-card">
+            <div class="learn-icon">🎣</div>
+            <h3>Phishing Messages</h3>
+            <p>Fake messages may pretend to come from your bank or a trusted company.</p>
+            <ul>
+                <li>Check the sender.</li>
+                <li>Never share your OTP.</li>
+                <li>Avoid suspicious links.</li>
+            </ul>
+        </div>
+
+        <div class="learning-card">
+            <div class="learn-icon">💸</div>
+            <h3>UPI Scams</h3>
+            <p>Scammers may trick you into approving a payment.</p>
+            <ul>
+                <li>Verify the receiver.</li>
+                <li>Never share your UPI PIN.</li>
+                <li>Check the amount before paying.</li>
+            </ul>
+        </div>
+
+        <div class="learning-card">
+            <div class="learn-icon">🚨</div>
+            <h3>Digital Arrest Scams</h3>
+            <p>Criminals may impersonate police officers and threaten arrest to demand money.</p>
+            <ul>
+                <li>Stay calm.</li>
+                <li>Don't transfer money under pressure.</li>
+                <li>Verify the claim independently.</li>
+            </ul>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Phishing Awareness Quiz -->
+<section id="quiz" class="quiz-section">
+
+    <div class="section-heading">
+        <h2>Cyber Safety <span>Quiz</span></h2>
+        <p>Test your knowledge and learn to identify online scams.</p>
+    </div>
+
+    <div class="quiz-card">
+
+        <div class="quiz-info">
+            <span id="questionNumber">Question 1 of 5</span>
+            <span id="quizScore">Score: 0</span>
+        </div>
+
+        <div class="quiz-progress">
+            <div id="quizProgress"></div>
+        </div>
+
+        <h3 id="questionText"></h3>
+
+        <div id="answerOptions"></div>
+
+        <p id="quizFeedback"></p>
+
+        <button id="nextQuestion" class="quiz-btn" hidden>
+            Next Question →
+        </button>
+
+        <button id="restartQuiz" class="quiz-btn" hidden>
+            Play Again ↻
+        </button>
+
+    </div>
+</section>
+
+
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="logo">🛡️ PhishGuard</div>
+
+        <p>Stop. Check. Stay Safe.</p>
+
+        <p class="footer-small">
+            Student Cybersecurity Project | Hackathon Prototype
+        </p>
+
+        <p class="footer-small">
+            Always verify important payment requests through official channels.
+        </p>
+
+    </footer>
+
+
+    <!-- Frontend Interaction -->
+<script>
+
+function openFeatureScanner(id) {
+    const panel = document.getElementById(id);
+
+    if (!panel) {
+        console.error("Scanner panel not found:", id);
+        return;
+    }
+
+    document.querySelectorAll(".scanner-panel").forEach(p => {
+        p.classList.remove("active");
+    });
+
+    panel.classList.add("active");
+
+    document.querySelectorAll(".tab").forEach(tab => {
+        tab.classList.remove("active");
+
+        const action = tab.getAttribute("onclick") || "";
+
+        if (
+            action.includes("'" + id + "'") ||
+            action.includes('"' + id + '"')
+        ) {
+            tab.classList.add("active");
+        }
+    });
+
+    // Wait for the scanner to become visible, then scroll
+    requestAnimationFrame(() => {
+        const top =
+            panel.getBoundingClientRect().top +
+            window.scrollY -
+            100;
+
+        window.scrollTo({
+            top: Math.max(0, top),
+            behavior: "smooth"
+        });
+    });
+}
+
+async function showScanner(id, button) {
+    document.querySelectorAll(".scanner-panel").forEach(panel => {
+        panel.classList.remove("active");
+    });
+
+    document.querySelectorAll(".tab").forEach(tab => {
+        tab.classList.remove("active");
+    });
+
+    document.getElementById(id).classList.add("active");
+    button.classList.add("active");
+}
+
+
+
+async function sendForAnalysis(endpoint, payload, resultId) {
+    const result = document.getElementById(resultId);
+
+    result.textContent = "Analyzing...";
+
+    try {
+        const response = await fetch(endpoint, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        });
+
+        const data = await response.json();
+        console.log("API response:", data);
+
+        if (!response.ok) {
+            result.textContent = data.error || "Analysis failed.";
+            return;
+        }
+
+        // Clear previous result
+    
+result.replaceChildren();
+
+// Remove the previous risk color
+result.classList.remove(
+    "risk-safe",
+    "risk-suspicious",
+    "risk-high",
+    "risk-uncertain"
+);
+
+// Apply color according to risk level
+const risk = (data.risk || "Uncertain").toLowerCase();
+
+if (risk.includes("high")) {
+    result.classList.add("risk-high");
+} else if (risk.includes("suspicious")) {
+    result.classList.add("risk-suspicious");
+} else if (risk.includes("safe-looking") ||
+           risk.includes("no obvious warning signs")) {
+    result.classList.add("risk-safe");
+} else {
+    result.classList.add("risk-uncertain");
+}
+
+
+
+       // Risk score heading
+const score = document.createElement("h2");
+
+const numericScore = Number(data.risk_score);
+const hasScore =
+data.risk_score !== null &&
+data.risk_score !== undefined &&
+data.risk_score !== "" &&
+Number.isFinite(numericScore);
+
+score.textContent = hasScore
+? "Risk Score: " + numericScore + "/100"
+: "Risk Score: Not available";
+
+result.appendChild(score);
+
+// Risk score progress bar
+if (hasScore) {
+const safeScore = Math.max(0, Math.min(100, numericScore));
+
+
+const scoreContainer = document.createElement("div");
+scoreContainer.className = "risk-score-container";
+
+const scoreHeading = document.createElement("div");
+scoreHeading.className = "risk-score-heading";
+
+const label = document.createElement("span");
+label.textContent = "Threat Assessment";
+
+const value = document.createElement("span");
+value.textContent = safeScore + "%";
+
+value.style.marginLeft = "12px";
+value.style.whiteSpace = "nowrap";
+
+scoreHeading.append(label, value);
+
+const progress = document.createElement("div");
+progress.className = "risk-progress";
+progress.setAttribute("role", "progressbar");
+progress.setAttribute("aria-valuemin", "0");
+progress.setAttribute("aria-valuemax", "100");
+progress.setAttribute("aria-valuenow", safeScore);
+
+const bar = document.createElement("div");
+bar.className = "risk-progress-fill";
+
+if (safeScore >= 50) {
+    bar.style.background = "#dc2626";
+} else if (safeScore >= 25) {
+    bar.style.background = "#f59e0b";
+} else {
+    bar.style.background = "#16a34a";
+}
+
+progress.appendChild(bar);
+scoreContainer.append(scoreHeading, progress);
+result.appendChild(scoreContainer);
+
+requestAnimationFrame(() => {
+    bar.style.width = safeScore + "%";
+});
+
+
+}
+
+        // Risk level
+        const heading = document.createElement("h3");
+        heading.textContent = "Risk Level: " + (data.risk || "Uncertain");
+        result.appendChild(heading);
+
+        // Score explanation
+       const scoreInfo = document.createElement("p");
+
+if (hasScore) {
+if (numericScore >= 50) {
+scoreInfo.textContent =
+"High Risk: Strong warning indicators were detected. Do not share sensitive information or make payments without independent verification.";
+} else if (numericScore >= 25) {
+scoreInfo.textContent =
+"Suspicious: Some warning indicators were detected. Verify the sender through an official channel.";
+} else {
+scoreInfo.textContent =
+"Safe-looking: Few configured warning indicators were detected. This does not guarantee that the message is safe.";
+}
+} else {
+scoreInfo.textContent =
+"A numeric risk score could not be calculated.";
+}
+
+result.appendChild(scoreInfo);
+
+
+        // Explanation from backend
+        if (data.message) {
+            const explanation = document.createElement("p");
+            explanation.textContent = data.message;
+            result.appendChild(explanation);
+        }
+
+        // Hostname for URL scanner
+        if (data.hostname) {
+            const hostname = document.createElement("p");
+            hostname.textContent = "Hostname: " + data.hostname;
+            result.appendChild(hostname);
+        }
+
+        // Detected warning signs
+        const reasonsHeading = document.createElement("h4");
+        reasonsHeading.textContent = "Detected Warning Signs";
+        result.appendChild(reasonsHeading);
+
+        if (data.reasons && data.reasons.length > 0) {
+            const list = document.createElement("ul");
+
+            data.reasons.forEach(item => {
+                const li = document.createElement("li");
+
+                if (typeof item === "string") {
+                    li.textContent = item;
+                } else {
+                    li.textContent =
+                        item.category + ": " + item.matches.join(", ");
+                }
+
+                list.appendChild(li);
+            });
+
+            result.appendChild(list);
+        } else {
+            const note = document.createElement("p");
+            note.textContent = "No configured warning patterns matched.";
+            result.appendChild(note);
+        }
+
+        // Safer next step
+        if (data.next_step) {
+            const adviceHeading = document.createElement("h4");
+            adviceHeading.textContent = "What Should You Do?";
+            result.appendChild(adviceHeading);
+
+            const advice = document.createElement("p");
+            advice.textContent = data.next_step;
+            result.appendChild(advice);
+        }
+
+    } catch (error) {
+        result.textContent =
+            "Could not connect to the server. Check that Flask is running.";
+    }
+}
+
+
+
+
+function demoScan(event, resultId) {
+    event.preventDefault();
+
+    if (resultId === "messageResult") {
+        const message = document.getElementById("messageInput").value.trim();
+
+        if (!message) {
+            document.getElementById(resultId).textContent =
+                "Please enter a message.";
+            return;
+        }
+
+        sendForAnalysis(
+            "/analyze-message",
+            { message: message },
+            resultId
+        );
+    }
+
+    else if (resultId === "urlResult") {
+        const url = document.getElementById("urlInput").value.trim();
+
+        if (!url) {
+            document.getElementById(resultId).textContent =
+                "Please enter a URL.";
+            return;
+        }
+
+        sendForAnalysis(
+            "/analyze-url",
+            { url: url },
+            resultId
+        );
+    }
+
+    
+    
+else if (resultId === "arrestResult") {
+    const message = document.getElementById("arrestInput").value.trim();
+
+    if (!message) {
+        document.getElementById(resultId).textContent =
+            "Please enter a message.";
+        return;
+    }
+
+    sendForAnalysis(
+        "/analyze-arrest",
+        { message: message },
+        resultId
+    );
+}
+
+
+    else {
+    document.getElementById(resultId).textContent =
+        "This scanner's backend will be added next.";
+    }
+}
+
+
+function demoFile(event, inputId, resultId) {
+    event.preventDefault();
+
+    const fileInput = document.getElementById(inputId);
+    const result = document.getElementById(resultId);
+
+    if (!fileInput.files.length) {
+        result.textContent = "Please select an image first.";
+        return;
+    }
+
+    result.textContent =
+        "Image selected. OCR scanning will be added next.";
+}
+const demoMessages = [
+"Hey, kal college kitne baje jaana hai?",
+"Your KYC has expired! Update your bank account immediately or it will be blocked.",
+"Share your OTP immediately or your bank account will be blocked.",
+"This is CBI. A digital arrest warrant has been issued against you. Transfer money immediately.",
+"Congratulations! You have won a lottery prize. Pay a processing fee to claim your reward."
+];
+
+function testDemo(index) {
+const messageInput = document.getElementById("messageInput");
+
+
+if (!messageInput || !demoMessages[index]) {
+    alert("Demo message could not be loaded.");
+    return;
+}
+
+// Fill the selected sample message
+messageInput.value = demoMessages[index];
+
+// Open the Message Scanner
+showScanner("message", document.querySelector(
+    '.tab[onclick*="message"]'
+));
+
+// Scroll to the scanner
+document.getElementById("message").scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+});
+
+// Run the existing Message Scanner
+const messageForm = messageInput.closest("form");
+
+if (messageForm) {
+    messageForm.requestSubmit();
+}
+
+
+}
+
+</script>
+<script>
+async function scanScreenshot(event) {
+    event.preventDefault();
+
+    const input = document.getElementById("imageInput");
+    const resultBox = document.getElementById("imageResult");
+
+    if (!input.files.length) {
+        resultBox.textContent = "Please select a screenshot.";
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("image", input.files[0]);
+
+    resultBox.textContent = "Scanning screenshot... Please wait.";
+
+    try {
+        const response = await fetch("/analyze-screenshot", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            resultBox.textContent = data.error || "Screenshot scanning failed.";
+            return;
+        }
+
+        resultBox.replaceChildren();
+
+resultBox.classList.remove(
+    "risk-safe",
+    "risk-suspicious",
+    "risk-high",
+    "risk-uncertain"
+);
+
+const risk = (data.risk || "Uncertain").toLowerCase();
+
+if (risk.includes("high")) {
+    resultBox.classList.add("risk-high");
+} else if (risk.includes("suspicious")) {
+    resultBox.classList.add("risk-suspicious");
+} else if (risk.includes("safe")) {
+    resultBox.classList.add("risk-safe");
+} else {
+    resultBox.classList.add("risk-uncertain");
+}
+        const heading = document.createElement("h4");
+        heading.textContent = "Scan Result: " + (data.risk || "Uncertain");
+        resultBox.appendChild(heading);
+
+        const score = document.createElement("p");
+        score.textContent = "Risk Score: " + (data.risk_score ?? "N/A") + "/100";
+        resultBox.appendChild(score);
+
+        const extractedHeading = document.createElement("h4");
+        extractedHeading.textContent = "Text detected in screenshot:";
+        resultBox.appendChild(extractedHeading);
+
+        const extracted = document.createElement("p");
+        extracted.textContent = data.extracted_text || "No text detected.";
+        resultBox.appendChild(extracted);
+
+        
+if (data.reasons && data.reasons.length) {
+    const reasonsHeading = document.createElement("h4");
+    reasonsHeading.textContent = "⚠️ Warning Signs:";
+    resultBox.appendChild(reasonsHeading);
+
+    const list = document.createElement("ul");
+
+    data.reasons.forEach(reason => {
+        const item = document.createElement("li");
+
+        if (typeof reason === "string") {
+            item.textContent = reason;
+        } else if (reason && typeof reason === "object") {
+            const category = reason.category || "Warning";
+            const matches = Array.isArray(reason.matches)
+                ? reason.matches.join(", ")
+                : "";
+
+            item.textContent = matches
+                ? `${category}: ${matches}`
+                : category;
+        }
+
+        list.appendChild(item);
+    });
+
+    resultBox.appendChild(list);
+}
+
+
+        const advice = document.createElement("p");
+        advice.textContent = data.next_step || data.message || "Be careful with suspicious messages.";
+        resultBox.appendChild(advice);
+
+    } catch (error) {
+        resultBox.textContent = "Could not connect to the server. Please check Flask.";
+    }
+}
+</script>
+<script>
+async function scanQR(event) {
+    event.preventDefault();
+
+    const input = document.getElementById("qrInput");
+    const resultBox = document.getElementById("qrResult");
+
+    resultBox.className = "result qr-uncertain";
+
+    if (!input.files.length) {
+        resultBox.className = "result qr-error";
+        resultBox.textContent = "Please select a QR code image.";
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("image", input.files[0]);
+
+    resultBox.textContent = "Scanning QR code... Please wait.";
+
+    try {
+        const response = await fetch("/analyze-qr", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+        resultBox.replaceChildren();
+
+        if (!response.ok || data.error) {
+            resultBox.className = "result qr-error";
+            resultBox.textContent =
+                data.error || "Could not scan this QR code.";
+            return;
+        }
+
+        if (!data.results || data.results.length === 0) {
+            resultBox.className = "result qr-error";
+            resultBox.textContent = "No QR code found.";
+            return;
+        }
+
+        data.results.forEach(item => {
+            const risk = (item.risk || "Uncertain").toLowerCase();
+
+            if (risk === "high risk") {
+                resultBox.className = "result qr-high-risk";
+            } else if (risk === "suspicious") {
+                resultBox.className = "result qr-suspicious";
+            } else if (risk === "safe" || risk === "safe-looking") {
+                resultBox.className = "result qr-safe";
+            } else {
+                resultBox.className = "result qr-uncertain";
+            }
+
+            const heading = document.createElement("h4");
+            heading.textContent = "🔎 QR Scan Result: " + item.risk;
+            resultBox.appendChild(heading);
+
+            const decoded = document.createElement("p");
+            decoded.textContent =
+                "Decoded Content: " + item.decoded_data;
+            resultBox.appendChild(decoded);
+
+            if (item.reasons && item.reasons.length > 0) {
+                const warningHeading = document.createElement("p");
+                warningHeading.textContent = "⚠️ Warning Signs:";
+                resultBox.appendChild(warningHeading);
+
+                const list = document.createElement("ul");
+
+                item.reasons.forEach(reason => {
+                    const li = document.createElement("li");
+                    li.textContent = reason;
+                    list.appendChild(li);
+                });
+
+                resultBox.appendChild(list);
+            } else {
+                const noWarnings = document.createElement("p");
+                noWarnings.textContent =
+                    "No warning signs detected by the current basic checks. This does not guarantee safety.";
+                resultBox.appendChild(noWarnings);
+            }
+
+            const advice = document.createElement("p");
+            advice.textContent =
+                "🛡️ " + (item.next_step || "Verify the details before proceeding.");
+            resultBox.appendChild(advice);
+        });
+
+    } catch (error) {
+        resultBox.className = "result qr-error";
+        resultBox.textContent =
+            "Could not connect to the server. Please check Flask.";
+    }
+}
+</script>
+
+<script>
+const quizQuestions = [
+    {
+        question: "Someone asks for your bank OTP. What should you do?",
+        options: [
+            "Share the OTP",
+            "Never share the OTP",
+            "Send it on WhatsApp",
+            "Share half of it"
+        ],
+        answer: 1,
+        explanation: "Never share your OTP with anyone."
+    },
+    {
+        question: "A message threatens immediate arrest unless you pay money. What should you do?",
+        options: [
+            "Pay immediately",
+            "Panic",
+            "Verify the claim independently",
+            "Share your bank details"
+        ],
+        answer: 2,
+        explanation: "Stay calm and verify the claim independently."
+    },
+    {
+        question: "Does HTTPS guarantee that a website is genuine?",
+        options: [
+            "Yes, always",
+            "No, scam websites can also use HTTPS",
+            "Only at night",
+            "Only on mobile"
+        ],
+        answer: 1,
+        explanation: "HTTPS encrypts the connection but does not prove a website is trustworthy."
+    },
+    {
+        question: "Someone asks for your UPI PIN to send you money. What should you do?",
+        options: [
+            "Enter the PIN",
+            "Share it",
+            "Stop and verify the request",
+            "Send the PIN to a friend"
+        ],
+        answer: 2,
+        explanation: "Never share your UPI PIN or enter it to receive money."
+    },
+    {
+        question: "What is the safest way to open your bank website?",
+        options: [
+            "Click any SMS link",
+            "Open an unknown link",
+            "Visit the official website directly",
+            "Trust every advertisement"
+        ],
+        answer: 2,
+        explanation: "Use your bank's verified website or official app."
+    }
+];
+
+let currentQuestion = 0;
+let quizScore = 0;
+let answered = false;
+
+function loadQuizQuestion() {
+    const question = quizQuestions[currentQuestion];
+
+    document.getElementById("questionNumber").textContent =
+        `Question ${currentQuestion + 1} of ${quizQuestions.length}`;
+
+    document.getElementById("quizScore").textContent =
+        `Score: ${quizScore}`;
+
+    document.getElementById("quizProgress").style.width =
+        `${(currentQuestion / quizQuestions.length) * 100}%`;
+
+    document.getElementById("questionText").textContent =
+        question.question;
+
+    document.getElementById("quizFeedback").textContent = "";
+    document.getElementById("answerOptions").innerHTML = "";
+
+    document.getElementById("nextQuestion").hidden = true;
+    document.getElementById("restartQuiz").hidden = true;
+
+    answered = false;
+
+    question.options.forEach((option, index) => {
+        const button = document.createElement("button");
+
+        button.textContent = option;
+        button.className = "quiz-option";
+
+        button.addEventListener("click", () => {
+            checkQuizAnswer(index, button);
+        });
+
+        document.getElementById("answerOptions").appendChild(button);
+    });
+}
+
+function checkQuizAnswer(selectedIndex, selectedButton) {
+    if (answered) return;
+
+    answered = true;
+
+    const question = quizQuestions[currentQuestion];
+    const buttons = document.querySelectorAll(".quiz-option");
+
+    buttons.forEach(button => button.disabled = true);
+
+    if (selectedIndex === question.answer) {
+        quizScore++;
+        selectedButton.classList.add("correct");
+
+        document.getElementById("quizFeedback").textContent =
+            "Correct! " + question.explanation;
+    } else {
+        selectedButton.classList.add("wrong");
+        buttons[question.answer].classList.add("correct");
+
+        document.getElementById("quizFeedback").textContent =
+            "Incorrect. " + question.explanation;
+    }
+
+    document.getElementById("quizScore").textContent =
+        `Score: ${quizScore}`;
+
+    if (currentQuestion < quizQuestions.length - 1) {
+        document.getElementById("nextQuestion").hidden = false;
+    } else {
+        document.getElementById("questionText").textContent =
+            `Quiz completed! Your score is ${quizScore}/5.`;
+
+        document.getElementById("quizProgress").style.width = "100%";
+
+        document.getElementById("answerOptions").innerHTML = "";
+
+        document.getElementById("quizFeedback").textContent +=
+            " Try again to improve your score.";
+
+        document.getElementById("restartQuiz").hidden = false;
+    }
+}
+
+document.getElementById("nextQuestion").addEventListener("click", () => {
+    if (currentQuestion < quizQuestions.length - 1) {
+        currentQuestion++;
+        loadQuizQuestion();
+    }
+});
+
+document.getElementById("restartQuiz").addEventListener("click", () => {
+    currentQuestion = 0;
+    quizScore = 0;
+    loadQuizQuestion();
+});
+
+loadQuizQuestion();
+</script>
+<script>
+const cyberScene = document.querySelector(".cyber-visual");
+const cyberModels = document.querySelectorAll(".floating-model");
+
+if (cyberScene && cyberModels.length) {
+    cyberScene.addEventListener("mousemove", (event) => {
+        const rect = cyberScene.getBoundingClientRect();
+
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+        cyberModels.forEach((model, index) => {
+            const direction = index % 2 === 0 ? 1 : -1;
+
+            model.style.setProperty(
+                "--mouse-rotate-y",
+                `${x * 24 * direction}deg`
+            );
+
+            model.style.setProperty(
+                "--mouse-rotate-x",
+                `${-y * 20}deg`
+            );
+        });
+    });
+
+    cyberScene.addEventListener("mouseleave", () => {
+        cyberModels.forEach((model) => {
+            model.style.setProperty("--mouse-rotate-y", "0deg");
+            model.style.setProperty("--mouse-rotate-x", "0deg");
+        });
+    });
+}
+</script>
+
+<!-- PhishGuard Chatbot --><div id="chatbot-widget"><button id="chatbot-toggle" type="button" aria-label="Open PhishGuard chatbot">
+    💬
+</button>
+
+<div id="chatbot-panel" hidden>
+
+    <div class="chatbot-header">
+        <div>
+            <h3>🛡️ PhishGuard Assistant</h3>
+            <p>Your Cyber Safety Helper</p>
+        </div>
+
+        <button id="chatbot-close" type="button" aria-label="Close chatbot">
+            ✕
+        </button>
+    </div>
+
+    <div id="chatbot-messages" aria-live="polite">
+        <div class="chatbot-message bot-message">
+            Hi! 👋 I'm your PhishGuard Assistant. Ask me about scam messages, suspicious links, OTP fraud or digital arrest scams.
+        </div>
+    </div>
+
+    <div class="chatbot-quick-questions">
+        <button type="button" class="chatbot-quick-btn" data-question="How can I identify a scam?">
+            Identify a scam
+        </button>
+
+        <button type="button" class="chatbot-quick-btn" data-question="What is a digital arrest scam?">
+            Digital arrest
+        </button>
+
+        <button type="button" class="chatbot-quick-btn" data-question="Should I share my OTP?">
+            OTP safety
+        </button>
+    </div>
+
+    <form id="chatbot-form">
+        <input
+            type="text"
+            id="chatbot-input"
+            placeholder="Ask a cyber safety question..."
+            maxlength="2000"
+            autocomplete="off"
+            required
+        >
+
+        <button type="submit" id="chatbot-send">➤</button>
+    </form>
+
+</div>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("chatbot-toggle");
+    const panel = document.getElementById("chatbot-panel");
+    const close = document.getElementById("chatbot-close");
+    const form = document.getElementById("chatbot-form");
+    const input = document.getElementById("chatbot-input");
+    const messages = document.getElementById("chatbot-messages");
+    const sendButton = document.getElementById("chatbot-send");
+
+    // Check that chatbot HTML elements exist
+    if (!toggle || !panel || !close || !form || !input || !messages || !sendButton) {
+        console.error("PhishGuard chatbot elements are missing.");
+        return;
+    }
+
+    // Open and close chatbot
+    toggle.addEventListener("click", function () {
+        panel.hidden = false;
+        input.focus();
+    });
+
+    close.addEventListener("click", function () {
+        panel.hidden = true;
+    });
+
+    // Display a chat message safely
+    function addMessage(text, sender) {
+        const message = document.createElement("div");
+
+        message.classList.add("chatbot-message", sender);
+        message.textContent = text;
+
+        messages.appendChild(message);
+        messages.scrollTop = messages.scrollHeight;
+    }
+
+    // Send message to the Flask backend
+    async function sendMessage(message) {
+        if (!message.trim()) return;
+
+        addMessage(message, "user-message");
+        sendButton.disabled = true;
+        input.disabled = true;
+
+        try {
+            const response = await fetch("/chatbot", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    message: message.trim()
+                })
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.reply || data.error || "Request failed.");
+            }
+
+            addMessage(
+                data.reply || "Sorry, I could not generate a reply.",
+                "bot-message"
+            );
+
+        } catch (error) {
+            console.error("Chatbot error:", error);
+
+            addMessage(
+                "I couldn't connect to the chatbot. Please check that the Flask server is running and the /chatbot backend route has been added.",
+                "bot-message"
+            );
+
+        } finally {
+            sendButton.disabled = false;
+            input.disabled = false;
+            input.focus();
+        }
+    }
+
+    // Handle form submission
+    form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const message = input.value.trim();
+
+        if (!message) return;
+
+        input.value = "";
+        await sendMessage(message);
+    });
+
+    // Quick-question buttons
+    document.querySelectorAll(".chatbot-quick-btn").forEach(function (button) {
+        button.addEventListener("click", async function () {
+            const question = button.dataset.question;
+
+            if (!question || sendButton.disabled) return;
+
+            input.value = "";
+            await sendMessage(question);
+        });
+    });
+});
+</script>
+</body>
+</html>

@@ -2107,3 +2107,301 @@ bottom: 16px;
 }
 
 }
+/* Screenshot Scanner - Risk Result Box */
+#imageResult {
+    margin-top: 20px;
+    padding: 25px;
+    border-radius: 16px;
+    border: 2px solid #64748b;
+    background: rgba(30, 41, 59, 0.95);
+    color: #f8fafc;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+    transition: all 0.3s ease;
+}
+
+#imageResult h3,
+#imageResult h4 {
+    margin: 15px 0 10px;
+    color: #ffffff;
+}
+
+#imageResult p {
+    margin: 10px 0;
+}
+
+#imageResult ul {
+    padding-left: 25px;
+}
+
+#imageResult li {
+    margin-bottom: 8px;
+}
+
+/* High Risk - Red */
+#imageResult.risk-high,
+#qrResult.qr-high-risk {
+    background: linear-gradient(135deg, #7f1d1d, #991b1b);
+    border: 2px solid #f87171;
+    color: #ffffff;
+}
+
+/* Suspicious - Orange */
+#imageResult.risk-suspicious,
+#qrResult.qr-suspicious {
+    background: linear-gradient(135deg, #78350f, #92400e);
+    border: 2px solid #fbbf24;
+    color: #ffffff;
+}
+
+/* Safe-looking - Green */
+#imageResult.risk-safe,
+#qrResult.qr-safe {
+    background: linear-gradient(135deg, #14532d, #166534);
+    border: 2px solid #4ade80;
+    color: #ffffff;
+}
+
+/* Uncertain - Blue */
+#imageResult.risk-uncertain,
+#qrResult.qr-uncertain {
+    background: linear-gradient(135deg, #1e3a8a, #1e40af);
+    border: 2px solid #60a5fa;
+    color: #ffffff;
+}
+
+/* QR Scanner Result Box */
+#qrResult {
+    margin-top: 20px;
+    padding: 25px;
+    border-radius: 16px;
+    border: 2px solid #64748b;
+    background: rgba(30, 41, 59, 0.95);
+    color: #f8fafc;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+    transition: all 0.3s ease;
+}
+
+#qrResult h3,
+#qrResult h4 {
+    margin: 15px 0 10px;
+    color: #ffffff;
+}
+
+#qrResult p {
+    margin: 10px 0;
+}
+
+#qrResult ul {
+    padding-left: 25px;
+}
+
+#qrResult li {
+    margin-bottom: 8px;
+}
+
+/* QR Scanner Error */
+#qrResult.qr-error {
+    background: #7f1d1d;
+    border: 2px solid #f87171;
+    color: #ffffff;
+}
+/* ===== FINAL FIX: Screenshot & QR Scanner Results ===== */
+
+#imageResult,
+#qrResult {
+display: block;
+width: 100%;
+max-width: 100%;
+margin-top: 22px;
+padding: 24px;
+border-radius: 16px;
+border: 2px solid #64748b;
+background: linear-gradient(135deg, #111827, #1e293b);
+color: #f8fafc;
+font-size: 15px;
+line-height: 1.8;
+overflow-wrap: anywhere;
+word-break: break-word;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Headings */
+#imageResult h2,
+#imageResult h3,
+#imageResult h4,
+#qrResult h2,
+#qrResult h3,
+#qrResult h4 {
+color: inherit;
+margin: 12px 0;
+}
+
+/* Paragraphs and lists */
+#imageResult p,
+#qrResult p {
+color: inherit;
+margin: 10px 0;
+}
+
+#imageResult ul,
+#qrResult ul {
+padding-left: 24px;
+}
+
+#imageResult li,
+#qrResult li {
+margin: 8px 0;
+}
+
+/* HIGH RISK — Red */
+#imageResult.risk-high,
+#qrResult.qr-high-risk {
+background: linear-gradient(135deg, #7f1d1d, #450a0a) !important;
+border: 2px solid #ef4444 !important;
+color: #ffffff !important;
+}
+
+/* SUSPICIOUS — Orange */
+#imageResult.risk-suspicious,
+#qrResult.qr-suspicious {
+background: linear-gradient(135deg, #78350f, #431407) !important;
+border: 2px solid #f59e0b !important;
+color: #ffffff !important;
+}
+
+/* SAFE — Green */
+#imageResult.risk-safe,
+#qrResult.qr-safe {
+background: linear-gradient(135deg, #166534, #052e16) !important;
+border: 2px solid #22c55e !important;
+color: #ffffff !important;
+}
+
+/* UNCERTAIN — Blue */
+#imageResult.risk-uncertain,
+#qrResult.qr-uncertain {
+background: linear-gradient(135deg, #1e40af, #172554) !important;
+border: 2px solid #60a5fa !important;
+color: #ffffff !important;
+}
+
+/* ERROR — Dark Red */
+#qrResult.qr-error {
+background: linear-gradient(135deg, #991b1b, #450a0a) !important;
+border: 2px solid #f87171 !important;
+color: #ffffff !important;
+}
+
+/* Remove empty result boxes */
+#imageResult:empty,
+#qrResult:empty {
+display: none;
+}
+
+/* Mobile layout */
+@media (max-width: 650px) {
+#imageResult,
+#qrResult {
+padding: 16px;
+font-size: 14px;
+}
+}
+/* ===== QR CODE SCANNER PREMIUM RESULT DESIGN ===== */
+
+#qrResult {
+display: block;
+width: 100%;
+max-width: 100%;
+margin-top: 22px;
+padding: 25px;
+border-radius: 16px;
+background: linear-gradient(145deg, #111827, #1e293b) !important;
+border: 2px solid #475569;
+color: #f8fafc !important;
+font-size: 15px;
+line-height: 1.8;
+overflow-wrap: anywhere;
+word-break: break-word;
+box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+transition: all 0.3s ease;
+}
+
+/* QR Result Headings */
+#qrResult h2,
+#qrResult h3,
+#qrResult h4 {
+color: inherit !important;
+margin: 12px 0;
+}
+
+/* QR Result Text */
+#qrResult p {
+color: inherit !important;
+margin: 10px 0;
+}
+
+#qrResult ul {
+padding-left: 24px;
+}
+
+#qrResult li {
+color: inherit !important;
+margin-bottom: 8px;
+}
+
+/* HIGH RISK — RED */
+#qrResult.qr-high-risk {
+background: linear-gradient(135deg, #7f1d1d, #450a0a) !important;
+border: 2px solid #ef4444 !important;
+color: #ffffff !important;
+}
+
+/* SUSPICIOUS — ORANGE */
+#qrResult.qr-suspicious {
+background: linear-gradient(135deg, #78350f, #431407) !important;
+border: 2px solid #f59e0b !important;
+color: #ffffff !important;
+}
+
+/* SAFE — GREEN */
+#qrResult.qr-safe {
+background: linear-gradient(135deg, #166534, #052e16) !important;
+border: 2px solid #22c55e !important;
+color: #ffffff !important;
+}
+
+/* UNCERTAIN — BLUE */
+#qrResult.qr-uncertain {
+background: linear-gradient(135deg, #1e40af, #172554) !important;
+border: 2px solid #60a5fa !important;
+color: #ffffff !important;
+}
+
+/* ERROR — DARK RED */
+#qrResult.qr-error {
+background: linear-gradient(135deg, #991b1b, #450a0a) !important;
+border: 2px solid #f87171 !important;
+color: #ffffff !important;
+}
+
+/* QR Result Links */
+#qrResult a {
+color: #67e8f9 !important;
+overflow-wrap: anywhere;
+word-break: break-word;
+}
+
+/* Empty QR Result */
+#qrResult:empty {
+display: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 650px) {
+#qrResult {
+padding: 16px;
+font-size: 14px;
+}
+}

@@ -1,0 +1,8 @@
+Flask
+opencv-python
+joblib
+numpy
+pyzbar
+pytesseract
+Pillow
+scikit-learn

@@ -738,10 +738,31 @@ requestAnimationFrame(() => {
 }
 
         // Risk level
-        const heading = document.createElement("h3");
-        heading.textContent = "Risk Level: " + (data.risk || "Uncertain");
-        result.appendChild(heading);
+        // Machine Learning Prediction
+if (data.ml_prediction) {
+    const mlHeading = document.createElement("h4");
+    mlHeading.textContent = "🤖 ML Prediction: " + data.ml_prediction;
+    result.appendChild(mlHeading);
+}
 
+// Machine Learning Confidence Score
+if (
+    data.ml_confidence !== null &&
+    data.ml_confidence !== undefined
+) {
+    const confidence = document.createElement("p");
+    confidence.textContent =
+        "ML Confidence: " + data.ml_confidence + "%";
+    result.appendChild(confidence);
+}
+
+// Detection Method
+if (data.detection_method) {
+    const method = document.createElement("p");
+    method.textContent =
+        "Detection Method: " + data.detection_method;
+    result.appendChild(method);
+}
         // Score explanation
        const scoreInfo = document.createElement("p");
 

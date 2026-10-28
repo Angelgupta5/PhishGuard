@@ -16,7 +16,7 @@ PhishGuard is a cybersecurity project aimed at helping users identify potentiall
 
 ## Project Status
 
-Currently under development.
+Developed.
 
 ## Technology Stack
 
